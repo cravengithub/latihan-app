@@ -165,6 +165,7 @@ class ComposerStaticInit32509e25b61dd9e5c4c55699e981807c
         ),
         'A' => 
         array (
+            'App\\Models\\' => 11,
             'App\\' => 4,
         ),
     );
@@ -340,8 +341,8 @@ class ComposerStaticInit32509e25b61dd9e5c4c55699e981807c
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -487,6 +488,10 @@ class ComposerStaticInit32509e25b61dd9e5c4c55699e981807c
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'App\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Models',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -518,6 +523,8 @@ class ComposerStaticInit32509e25b61dd9e5c4c55699e981807c
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Buku' => __DIR__ . '/../..' . '/app/Models/Buku.php',
+        'App\\Models\\RakBuku' => __DIR__ . '/../..' . '/app/Models/RakBuku.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

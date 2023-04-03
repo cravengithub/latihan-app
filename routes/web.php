@@ -30,3 +30,8 @@ Route::post('/biodata', function (Request $request) {
             No. Hp.: $request->no_hp.";
     return $output;
 });
+Route::get('/buku', function () {
+    $data = ['buku 1', 'buku 2', 'buku 3'];
+    // $data = 'latihan';
+    return view('buku/list', ['data' => $data]);
+});

@@ -21,12 +21,15 @@
     @case(1)
         Jenis Pemrograman<br />
     @break
+
     @case(2)
-    Jenis Struktur Data<br />
+        Jenis Struktur Data<br />
     @break
+
     @case(3)
         Jenis Basis Data<br />
     @break
+
     @default
         Bukan buku komputer<br />
 @endswitch

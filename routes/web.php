@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RakBukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,10 @@ Route::get('/buku', function () {
     $data['sub_judul']= 'latihan parsing data di view';
     $data['buku'] = ['buku 1', 'buku 2', 'buku 3', 'buku 4', 'buku 5'];
     return view('buku/list', $data);
+});
+// Rak Buku
+Route::controller(RakBukuController::class)->group(function(){
+    Route::get('rak_buku/','index');
+    Route::get('rak_buku/create','create');
+
 });

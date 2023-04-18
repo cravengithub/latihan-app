@@ -30,7 +30,12 @@ class RakBukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rak = new RakBuku();
+        $rak->nama = $request->input('nama');
+        $rak->lokasi = $request->input('lokasi');
+        $rak->keterangan = $request->input('keterangan');
+        $rak->save();
+        return redirect('/rak_buku');
     }
 
     /**

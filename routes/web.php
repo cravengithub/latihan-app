@@ -34,14 +34,14 @@ Route::post('/biodata', function (Request $request) {
 Route::get('/buku', function () {
     $data = [];
     $data['poin'] = 83;
-    $data['flag'] = '2'; 
-    $data['sub_judul']= 'latihan parsing data di view';
+    $data['flag'] = '2';
+    $data['sub_judul'] = 'latihan parsing data di view';
     $data['buku'] = ['buku 1', 'buku 2', 'buku 3', 'buku 4', 'buku 5'];
     return view('buku/list', $data);
 });
 // Rak Buku
-Route::controller(RakBukuController::class)->group(function(){
-    Route::get('rak_buku/','index');
-    Route::get('rak_buku/create','create');
-
+Route::controller(RakBukuController::class)->group(function () {
+    Route::get('rak_buku/', 'index');
+    Route::get('rak_buku/create', 'create');
+    Route::post('rak_buku/create', 'store');
 });

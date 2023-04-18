@@ -25,7 +25,10 @@
                 <td>{{ $r->nama }}</td>
                 <td>{{ $r->lokasi }}</td>
                 <td>{{ $r->keterangan }}</td>
-                <td>{{ $r->id }}</td>
+                <td>
+                    <a href="rak_buku/edit/{{ $r->id }}">Edit</a>
+                    <a href="rak_buku/destroy/{{ $r->id }}">Hapus</a>
+                </td>
             </tr>
             @php
                 $i++;

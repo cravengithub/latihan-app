@@ -22,6 +22,7 @@ class RakBukuController extends Controller
     public function create()
     {
         $data['store'] = 'Input';
+        $data['rak'] = new RakBuku();
         return view('rak_buku.form', $data);
     }
 
@@ -43,7 +44,7 @@ class RakBukuController extends Controller
      */
     public function show(RakBuku $rakBuku)
     {
-        //
+        return view('rak_buku.destroy', ['rak' => $rakBuku]);
     }
 
     /**
@@ -51,7 +52,9 @@ class RakBukuController extends Controller
      */
     public function edit(RakBuku $rakBuku)
     {
-        //
+        $data['store'] = 'Ubah';
+        $data['rak'] = $rakBuku;
+        return view('rak_buku.form', $data);
     }
 
     /**
@@ -59,7 +62,11 @@ class RakBukuController extends Controller
      */
     public function update(Request $request, RakBuku $rakBuku)
     {
-        //
+        $rakBuku->nama = $request->input('nama');
+        $rakBuku->lokasi = $request->input('lokasi');
+        $rakBuku->keterangan = $request->input('keterangan');
+        $rakBuku->save();
+        return redirect('/rak_buku');
     }
 
     /**
@@ -67,6 +74,7 @@ class RakBukuController extends Controller
      */
     public function destroy(RakBuku $rakBuku)
     {
-        //
+        $rakBuku->delete();
+        return redirect('/rak_buku');
     }
 }

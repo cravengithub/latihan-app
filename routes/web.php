@@ -40,8 +40,4 @@ Route::get('/buku', function () {
     return view('buku/list', $data);
 });
 // Rak Buku
-Route::controller(RakBukuController::class)->group(function () {
-    Route::get('rak_buku/', 'index');
-    Route::get('rak_buku/create', 'create');
-    Route::post('rak_buku/create', 'store');
-});
+Route::resource('rak_buku', RakBukuController::class);

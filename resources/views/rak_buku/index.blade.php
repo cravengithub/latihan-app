@@ -4,7 +4,7 @@
 @section('content')
     <h2>Daftar Rak Buku</h2>
     <div class="send_bt">
-        <a href="rak_buku/create">Tambah</a>
+        <a href="{{ url('rak_buku/create') }}">Tambah</a>
     </div>
     <table>
         <tr>
@@ -26,8 +26,8 @@
                 <td>{{ $r->lokasi }}</td>
                 <td>{{ $r->keterangan }}</td>
                 <td>
-                    <a href="rak_buku/edit/{{ $r->id }}">Edit</a>
-                    <a href="rak_buku/destroy/{{ $r->id }}">Hapus</a>
+                    <a href="rak_buku/{{ $r->id }}/edit">Edit</a>
+                    <a href="rak_buku/{{ $r->id }}">Hapus</a>
                 </td>
             </tr>
             @php

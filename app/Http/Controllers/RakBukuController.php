@@ -12,8 +12,8 @@ class RakBukuController extends Controller
      */
     public function index()
     {
-        $data['rak'] = RakBuku::all();
-        return view('rak_buku.index', $data);
+        $rak = RakBuku::all();
+        return view('rak_buku.index', ['rak' => $rak]);
     }
 
     /**
@@ -23,6 +23,7 @@ class RakBukuController extends Controller
     {
         $data['store'] = 'Input';
         $data['rak'] = new RakBuku();
+        $data['action'] = url('rak_buku');
         return view('rak_buku.form', $data);
     }
 
@@ -54,6 +55,7 @@ class RakBukuController extends Controller
     {
         $data['store'] = 'Ubah';
         $data['rak'] = $rakBuku;
+        $data['action'] = url('rak_buku' . '/' . $rakBuku->id);
         return view('rak_buku.form', $data);
     }
 

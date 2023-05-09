@@ -2,7 +2,7 @@
 @section('title', 'Daftar Rak Buku')
 @section('content')
     <h2>{{ $store }} Data Rak Buku</h2>
-    <form method="POST" action="@if (strtolower($store) == 'ubah') {{ url('rak_buku') . '/' . $rak->id }} @endif">
+    <form method="POST" action="{{$action}}">
         @csrf
         @if (strtolower($store) == 'ubah')
             @method('PUT')

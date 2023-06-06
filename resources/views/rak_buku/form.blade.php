@@ -8,8 +8,14 @@
             @method('PUT')
         @endif
         <input type="hidden" name="id" value="{{ $rak->id }}" />
-        <input type="text" class="mail_text" name="nama" placeholder="Nama Rak" value="{{ $rak->nama }}" />
-        <input type="text" class="mail_text" name="lokasi" placeholder="Lokasi" value="{{ $rak->lokasi }}" />
+        <input type="text" class="mail_text" name="nama" placeholder="Nama Rak" value="{{ $rak->nama }}" /><br>
+        @error('nama')
+            <b>{{ $message }}</b>
+        @enderror
+        <input type="text" class="mail_text" name="lokasi" placeholder="Lokasi" value="{{ $rak->lokasi }}" /><br>
+        @error('lokasi')
+            <b>{{ $message }}</b>
+        @enderror
         <input type="text" class="mail_text" name="keterangan" placeholder="keterangan" value="{{ $rak->keterangan }}" />
         <input type="submit" value="{{ $store }}" />
         <div class="send_bt">

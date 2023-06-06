@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class RakBukuController extends Controller
 {
+    private function pre($arr = [])
+    {
+        echo '<pre>';
+        print_r($arr);
+        echo '</pre>';
+    }
+
+
     /**
      * Display a listing of the resource.
      */
@@ -36,7 +44,13 @@ class RakBukuController extends Controller
         $rak->nama = $request->input('nama');
         $rak->lokasi = $request->input('lokasi');
         $rak->keterangan = $request->input('keterangan');
-        $rak->save();
+        $validated = $request->validate([
+            'nama' => 'required |max:50',
+            'lokasi' => 'required | max:50'
+        ]);
+        if ($validated) {
+            $rak->save();
+        }
         return redirect('/rak_buku');
     }
 
@@ -67,7 +81,13 @@ class RakBukuController extends Controller
         $rakBuku->nama = $request->input('nama');
         $rakBuku->lokasi = $request->input('lokasi');
         $rakBuku->keterangan = $request->input('keterangan');
-        $rakBuku->save();
+        $validated = $request->validate([
+            'nama' => 'required |max:50',
+            'lokasi' => 'required | max:50'
+        ]);
+        if ($validated) {
+            $rak->save();
+        }
         return redirect('/rak_buku');
     }
 

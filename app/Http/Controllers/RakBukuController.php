@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RakBuku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RakBukuController extends Controller
 {
@@ -44,16 +45,46 @@ class RakBukuController extends Controller
         $rak->nama = $request->input('nama');
         $rak->lokasi = $request->input('lokasi');
         $rak->keterangan = $request->input('keterangan');
-        $validated = $request->validate([
+        $rules = [
             'nama' => 'required |max:50',
             'lokasi' => 'required | max:50'
-        ]);
+        ];
+        $msg = [
+            'required' => 'Kolom ini harus diisi.',
+            'max' => 'Karakter yang diisi tidak melebihi 50 huruf.'
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages = $msg);
+        if ($validator->fails()) {
+            return redirect('/rak_buku/create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $validated = $validator->validate();
         if ($validated) {
             $rak->save();
         }
         return redirect('/rak_buku');
     }
 
+    private function validation($request, $redirect_path)
+    {
+        $rules = [
+            'nama' => 'required |max:50',
+            'lokasi' => 'required | max:50'
+        ];
+        $msg = [
+            'required' => 'Kolom ini harus diisi.',
+            'max' => 'Karakter yang diisi tidak melebihi 50 huruf.'
+        ];
+        $validator = Validator::make($request, $rules, $messages = $msg);
+        if ($validator->fails()) {
+            return redirect($redirect_path)
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $validated = $validator->validate();
+        return $validated;
+    }
     /**
      * Display the specified resource.
      */
@@ -81,10 +112,7 @@ class RakBukuController extends Controller
         $rakBuku->nama = $request->input('nama');
         $rakBuku->lokasi = $request->input('lokasi');
         $rakBuku->keterangan = $request->input('keterangan');
-        $validated = $request->validate([
-            'nama' => 'required |max:50',
-            'lokasi' => 'required | max:50'
-        ]);
+        $validated = $this->validation($request->all(), '/rak_buku/edit');
         if ($validated) {
             $rak->save();
         }

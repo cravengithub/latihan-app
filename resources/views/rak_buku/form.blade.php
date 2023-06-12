@@ -11,12 +11,12 @@
         <input type="text" class="mail_text" name="nama" placeholder="Nama Rak" value="{{ $rak->nama }}" /><br>
         @error('nama')
             <b>{{ $message }}</b>
-        @enderror
+        @enderror<br>
         <input type="text" class="mail_text" name="lokasi" placeholder="Lokasi" value="{{ $rak->lokasi }}" /><br>
         @error('lokasi')
             <b>{{ $message }}</b>
-        @enderror
-        <input type="text" class="mail_text" name="keterangan" placeholder="keterangan" value="{{ $rak->keterangan }}" />
+        @enderror<br>
+        <input type="text" class="mail_text" name="keterangan" placeholder="keterangan" value="{{ $rak->keterangan }}" /><br>
         <input type="submit" value="{{ $store }}" />
         <div class="send_bt">
             <a href="{{ url('/rak_buku') }}">Kembali</a>

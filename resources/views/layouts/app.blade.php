@@ -30,6 +30,10 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <!-- owl stylesheets -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
 </head>
 
 <body>
@@ -204,10 +208,12 @@
                                         laboris</p>
                                     <div class="client_main">
                                         <div class="client_left">
-                                            <div class="client_img"><img src="/web-template/images/client-img.png"></div>
+                                            <div class="client_img"><img src="/web-template/images/client-img.png">
+                                            </div>
                                         </div>
                                         <div class="client_right">
-                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png"></div>
+                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png">
+                                            </div>
                                             <h6 class="client_name">Uliya Hindd</h6>
                                             <p class="aliqua_text">Aliqua. Ut enim</p>
                                         </div>
@@ -222,10 +228,12 @@
                                         laboris</p>
                                     <div class="client_main">
                                         <div class="client_left">
-                                            <div class="client_img"><img src="/web-template/images/client-img.png"></div>
+                                            <div class="client_img"><img src="/web-template/images/client-img.png">
+                                            </div>
                                         </div>
                                         <div class="client_right">
-                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png"></div>
+                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png">
+                                            </div>
                                             <h6 class="client_name">Uliya Hindd</h6>
                                             <p class="aliqua_text">Aliqua. Ut enim</p>
                                         </div>
@@ -240,10 +248,12 @@
                                         laboris</p>
                                     <div class="client_main">
                                         <div class="client_left">
-                                            <div class="client_img"><img src="/web-template/images/client-img.png"></div>
+                                            <div class="client_img"><img src="/web-template/images/client-img.png">
+                                            </div>
                                         </div>
                                         <div class="client_right">
-                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png"></div>
+                                            <div class="quick_icon"><img src="/web-template/images/quick-icon.png">
+                                            </div>
                                             <h6 class="client_name">Uliya Hindd</h6>
                                             <p class="aliqua_text">Aliqua. Ut enim</p>
                                         </div>
